@@ -16,19 +16,14 @@ static const uint SCLK_PIN = PICO_DEFAULT_I2C_SCL_PIN;
 
 // change this to match your local stations
 static const float STATION_PRESETS[] = {
-    88.8f, // Radio Romania Actualitati
-    90.4f, // EBS
-    91.7f, // RFI
-    95.6f, // Radio Cluj
-    101.0f, // Radio Romania Cultural
-    107.3f, // Itsy Bitsy
+    100.3f,
 };
 static_assert(count_of(STATION_PRESETS) <= 9, "");
 
 #define DEFAULT_FREQUENCY STATION_PRESETS[0]
 
 // change this to configure FM band, channel spacing, and de-emphasis
-#define FM_CONFIG fm_config_europe()
+#define FM_CONFIG fm_config_usa()
 
 static si470x_t radio;
 static rds_parser_t rds_parser;
